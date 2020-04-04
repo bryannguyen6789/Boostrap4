@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>prop demo</title>i 
+  <style>
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+	$(document).ready(function(){
+		$('button').click(function(){
+			let opt = $('input[type="radio"]');
+			let n1 = $("input[name='n1']").val();
+			let n2 = $("input[name='n2']").val();
+			let vopt = '';
+			opt.each(function(i){
+				if($(this).is(':checked')){
+					vopt =  $(this).val();
+					//console.log($(this).val());
+					//break;
+				}
+			});
+			switch(vopt){
+				case '+': 
+			}
+			console.log(eval(n1+vopt+n2));
+			
+		});
+	});
+  </script>
+</head>
+<body>
+	<span>number-1</span><input type='text' name='n1' value='' />
+	<span>number-2</span><input type='text' name='n2' value='' />
+	<span>+</span><input name="rd" value='+' type="radio" >
+	<span>-</span><input name="rd" value='-' type="radio" >
+	<span>x</span><input name="rd" value='*' type="radio" >
+	<button>Calculate</button>
+</body>
+</html>

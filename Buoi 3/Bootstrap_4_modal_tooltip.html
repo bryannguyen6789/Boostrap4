@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script>
+	$(document).ready(function(){
+		//$('#myModal').modal();
+		$('#myTooltip').tooltip();
+		$('#openModal').click(function(){
+			$('#myModal').modal();
+		});
+	});
+  </script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin:24px 0;">
+	  <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+	  <button class= 	"navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navb">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item">
+			<a class="nav-link" href="javascript:void(0)">Link</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="javascript:void(0)">Link</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link disabled" href="javascript:void(0)">Disabled</a>
+		  </li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+		  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+		  <button class="btn btn-success my-2 my-sm-0" type="button">Search</button>
+		</form>
+	  </div>
+	</nav>
+	<div class='container'>
+		<div class='row'>
+			<!-- Button to Open the Modal -->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+			  Open modal
+			</button>
+			<button id='openModal'>Click to open Modal</button>
+			<!-- The Modal -->
+			<div class="modal" id="myModal">
+			  <div class="modal-dialog modal-sm">
+				<div class="modal-content">
+				  <!-- Modal Header -->
+				  <div class="modal-header">
+					<h4 class="modal-title">Modal Heading</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				  </div>
+				  <!-- Modal body -->
+				  <div class="modal-body">
+					<p>Modal body...</p>
+					<img src='chicago.jpg' width='80%' />
+				  </div>
+				  <!-- Modal footer -->
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<button type='button' class='btn btn-success' id='tbnSignIn'>Sign-in</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col-md-6'>
+				<a href="javascript:void(0)" id='myTooltip' data-placement="bottom" data-toggle="tooltip" title="Hello <u>Kitty</u>! <ul class='text-left success'><li>1. Huong dan rua tay</li><li>2. Suc hong hang ngay</li></ul>" data-html='true'>Tooltip - Hover over me to show</a>
+			</div>
+			
+		</div>
+		
+	</div>
+</body>
+</html>

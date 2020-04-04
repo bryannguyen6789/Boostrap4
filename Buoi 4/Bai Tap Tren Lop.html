@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title> 
+	<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.error{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<h2 class="text">BT - Filter</h2>
+			<br>
+			<div>
+				<input type="text" name="" style="width: 100%" class="form-control" id = "keyword" placeholder="Seach">
+				<div class="col-md-12">
+					<ul class="list-group" id = "myList">
+						<li class="list-group-item border border-danger" style="color: green">PHP</li>
+						<li class="list-group-item border border-primary" style="color: red">Jquery Boostrap</li>
+						<li class="list-group-item border border-secondary" style="color: orange">Javascript</li>
+						<li class="list-group-item border border-dark" style="color: #ABABAB">SQL Server</li>
+						<li class="list-group-item border border-danger" style="color: cyan">HTML CSS</li>
+					</ul>
+					<span id = "mes"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#keyword').keyup(function(){
+				var vkey	= $(this).val().toLowerCase();
+				var val = 0;
+				$('#myList li').filter(function(){
+					$(this).toggle($(this).text().toLowerCase().indexOf(vkey)!=-1);
+					if ($(this).text().toLowerCase().indexOf(vkey)!="-1") {
+						val++;
+					}
+					});
+				if (val == 0){
+					$('#mes').text('Not found');
+					$('#mes').addClass('error');
+				}
+				else{
+					$('#mes').text('');
+				}				
+			});
+		});
+	</script>
+
+</body>
+</html>

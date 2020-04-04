@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		.mes_show{
+			color:red;
+			border: 1px dotted red;
+		}
+		.mes_show::placeholder{
+			color:red;
+			font-size:14px;
+		}
+	</style>
+	<script type='text/javascript' src='jquery.js'></script>
+	<title>Jquery - S1</title>
+</head>
+<body>
+	<span>Email</span>
+	<input type="text" id='txtEmail' name="txtEmail" placeholder='Enter your email'>
+	<button id='btnSend'>Send</button>
+
+	<script>
+		$(document).ready(function(){
+			//code o day
+			$('#btnSend').click(function(){
+				let flag = 'YES';
+				let email = $('input[name="txtEmail"]');//$('#txtEmail');
+				if(email.val()==''){
+					flag = 'NO';
+					email.attr('placeholder','Please enter your email');
+					email.addClass('mes_show');
+				}
+				if(flag=='NO'){
+					$(this).text('Processing.........');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
